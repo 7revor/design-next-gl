@@ -15,4 +15,5 @@ export default class GLExposureFilter extends GLFilter {
     super(source);
     this.shader = this.initShader();
   }
+  
 }

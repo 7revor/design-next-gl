@@ -1,7 +1,7 @@
 import GLFilter from "../GLFilter";
 import { Beam, SchemaTypes } from "@7revor/beam-gl";
-import VertexShader from "@/core/gl/shaders/vertexShader.glsl";
-import ContrastFragmentShader from "@/core/gl/shaders/ContrastFragmentShader.glsl";
+import VertexShader from "../shaders/vertexShader.glsl";
+import ContrastFragmentShader from "../shaders/ContrastFragmentShader.glsl";
 
 export default class GLContrastFilter extends GLFilter {
   name = "contrast";

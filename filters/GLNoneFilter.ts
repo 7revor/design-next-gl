@@ -1,7 +1,7 @@
 import GLFilter from "../GLFilter";
 import { Beam } from "@7revor/beam-gl";
-import VertexShader from "@/core/gl/shaders/vertexShader.glsl";
-import FragmentShader from "@/core/gl/shaders/FragmentShader.glsl";
+import VertexShader from "../shaders/vertexShader.glsl";
+import FragmentShader from "../shaders/FragmentShader.glsl";
 
 export default class GLNoneFilter extends GLFilter {
   name = "none";

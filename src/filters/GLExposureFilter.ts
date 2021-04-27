@@ -1,6 +1,6 @@
 import GLFilter from "../GLFilter";
 import { Beam, SchemaTypes } from "@7revor/beam-gl";
-import VertexShader from "../shaders/vertexShader.glsl?raw";
+import VertexShader from "../shaders/vertexShader.glsl";
 import ExposureFragmentShader from "../shaders/ExposureFragmentShader.glsl?raw";
 
 export default class GLExposureFilter extends GLFilter {

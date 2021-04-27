@@ -1,7 +1,7 @@
 import GLFilter from "../GLFilter";
 import { SchemaTypes, Beam } from "@7revor/beam-gl";
-import SharpenVertexShader from "../shaders/SharpenVertexShader.glsl";
-import SharpenFragmentShader from "../shaders/SharpenFragmentShader.glsl";
+import SharpenVertexShader from "../shaders/SharpenVertexShader.glsl?raw";
+import SharpenFragmentShader from "../shaders/SharpenFragmentShader.glsl?raw";
 
 const { float } = SchemaTypes;
 

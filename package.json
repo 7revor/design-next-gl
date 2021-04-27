@@ -1,6 +1,15 @@
 {
-  "name": "vite",
+  "name": "design-next-gl",
   "version": "0.0.0",
+  "files": ["dist"],
+  "main": "./dist/design-next-gl.umd.js",
+  "module": "./dist/design-next-gl.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/design-next-gl.es.js",
+      "require": "./dist/design-next-gl.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",

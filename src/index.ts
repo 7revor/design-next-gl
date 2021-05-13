@@ -13,6 +13,14 @@ import GLVibranceFilter from "./filters/GLVibranceFilter";
 import GLVignetteFilter from "./filters/GLVignetteFilter";
 import GLWhiteBalanceFilter from "./filters/GLWhiteBalanceFilter";
 import { Beam } from "@7revor/beam-gl";
+import GLBlendSoftLightFilter from "./filters/GLBlendSoftLightFilter";
+import GLBlendScreenFilter from "./filters/GLBlendScreenFilter";
+import GLBlendMultiplyFilter from "./filters/GLBlendMultiplyFilter";
+import GLBlendColorBurnFilter from "./filters/GLBlendColorBurnFilter";
+import GLBlendLinearBurnFilter from "./filters/GLBlendLinearBurnFilter";
+import GLBlendColorDodgeFilter from "./filters/GLBlendColorDodgeFilter";
+import GLBlendLinearDodgeFilter from "./filters/GLBlendLinearDodgeFilter";
+import GLBlendOverlayFilter from "./filters/GLBlendOverlayFilter";
 
 export interface FilterParam {
   value: number | number[];
@@ -63,6 +71,22 @@ const getFilter = (name: string, beam: Beam) => {
       return new GLPixellateFilter(beam);
     case "vignette":
       return new GLVignetteFilter(beam);
+    case "blendSoftLight":
+      return new GLBlendSoftLightFilter(beam);
+    case "blendScreen":
+      return new GLBlendScreenFilter(beam);
+    case "blendMultiply":
+      return new GLBlendMultiplyFilter(beam);
+    case "blendColorBurn":
+      return new GLBlendColorBurnFilter(beam);
+    case "blendLinearBurn":
+      return new GLBlendLinearBurnFilter(beam);
+    case "blendColorDodge":
+      return new GLBlendColorDodgeFilter(beam);
+    case "blendLinearDodge":
+      return new GLBlendLinearDodgeFilter(beam);
+    case "blendOverlay":
+      return new GLBlendOverlayFilter(beam);
     default:
       return null;
   }

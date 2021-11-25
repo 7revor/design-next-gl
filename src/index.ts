@@ -27,6 +27,7 @@ export interface FilterParam {
   min?: number | number[];
   max?: number | number[];
   step?: number | number[];
+  default?: number | number[];
 }
 
 export interface Filter {
@@ -164,7 +165,11 @@ export const GLRender = (
     chain.render(true);
   } else {
     chain = initChain(resource, filters, canvas);
-    chain.setUniforms("reverse", reverse);
+    // 只在第一个滤镜处执行翻转
+    if (reverse) {
+      chain.filters.forEach((filter) => filter.setUniforms("reverse", 0));
+      chain.filters[0].setUniforms("reverse", 1);
+    }
     chain.setTextures(resource);
     chain.render(false);
   }

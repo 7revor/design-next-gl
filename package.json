@@ -1,7 +1,9 @@
 {
   "name": "@7revor/design-next-gl",
-  "version": "0.0.2",
-  "files": ["dist"],
+  "version": "0.0.4",
+  "files": [
+    "dist"
+  ],
   "main": "./dist/design-next-gl.umd.js",
   "module": "./dist/design-next-gl.es.js",
   "exports": {

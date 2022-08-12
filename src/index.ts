@@ -153,6 +153,9 @@ export const GLRender = (
   ) {
     // 复用当前chain
     chain = currentChain.chain;
+    // 只在第一个滤镜处执行翻转
+    chain.filters.forEach((filter) => filter.setUniforms("reverse", 0));
+    reverse && chain.filters[0].setUniforms("reverse", 1);
     for (let i = 0; i < filters.length; i++) {
       const filter = filters[i];
       const renderer = chain.filters[i];
@@ -165,11 +168,9 @@ export const GLRender = (
     chain.render(true);
   } else {
     chain = initChain(resource, filters, canvas);
+    chain.filters.forEach((filter) => filter.setUniforms("reverse", 0));
     // 只在第一个滤镜处执行翻转
-    if (reverse) {
-      chain.filters.forEach((filter) => filter.setUniforms("reverse", 0));
-      chain.filters[0].setUniforms("reverse", 1);
-    }
+    reverse && chain.filters[0].setUniforms("reverse", 1);
     chain.setTextures(resource);
     chain.render(false);
   }
